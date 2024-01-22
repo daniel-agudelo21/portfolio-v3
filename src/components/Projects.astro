@@ -1,0 +1,66 @@
+---
+import Link from "../components/Link.astro";
+const PROYECTOS = [
+    {
+        title: "Youtube Clone",
+        descripcion:
+            "This project was a full-stack application built using React for the front-end and Node.js for the back-end. It involved creating a user-friendly interface that interacted with a RESTful API. The main technologies used were HTML, CSS, JavaScript, React, and Node.js.",
+        github: "https://github.com/daniel-agudelo21/youtubeClone",
+        deploy: "",
+        image: "/assest/1151146.png",
+    },
+    {
+        title: "Ferretería RoFe",
+        descripcion:
+            "This project was a full-stack application built using React for the front-end and Node.js for the back-end. It involved creating a user-friendly interface that interacted with a RESTful API. The main technologies used were HTML, CSS, JavaScript, React, and Node.js.",
+        github: "",
+        deploy: "https://pf-ferreteria.vercel.app/login",
+        image: "/assest/1151146.png",
+    },
+    {
+        title: "Countries",
+        descripcion:
+            "This project was a full-stack application built using React for the front-end and Node.js for the back-end. It involved creating a user-friendly interface that interacted with a RESTful API. The main technologies used were HTML, CSS, JavaScript, React, and Node.js.",
+        github: "https://github.com/daniel-agudelo21/COUNTRIES-Proyecto-individual",
+        deploy: "",
+        image: "/assest/1151146.png",
+    },
+];
+---
+
+<section class="flex flex-col lg:ml-[312px]">
+    <div class="my-10">
+        <p class="">Destacados</p>
+        <h2 class="text-3xl lg:text-6xl font-semibold mb-6">Proyectos</h2>
+        <p>Una colección de los proyectos que he realizado recientemente</p>
+    </div>
+    <div class="flex flex-col justify-center items-center lg:justify-evenly lg:flex-row">
+        {
+            PROYECTOS.map(({ title, descripcion, github, deploy, image }) => (
+                <article>
+                    <h3>{title}</h3>
+                    <p>{descripcion}</p>
+                    <div class="group relative size-80 ">
+                        <img
+                            loading="lazy"
+                            class="rounded-3xl shadow-2xl shadow-white/10 aspect-auto size-80 transform group-hover:scale-90 transition-transform duration-300  object-cover"
+                            src={image}
+                            alt={`screenshot del proyecto ${title}`}
+                        />
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 group-hover:rounded-3xl  flex items-center justify-center">
+                            {github && (
+                                <Link
+                                    class=" opacity-0 group-hover:opacity-100 group-hover:scale-110 hover:text-orange-300 transition-transform duration-300"
+                                    href={github}
+                                >
+                                    GitHub
+                                </Link>
+                            )}
+                            {deploy && <Link class="opacity-0 group-hover:opacity-100 group-hover:scale-110 hover:text-orange-300 transition-transform duration-300" href={deploy}>Deploy</Link>}
+                        </div>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
