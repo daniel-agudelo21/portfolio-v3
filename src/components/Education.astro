@@ -1,0 +1,46 @@
+---
+import type { Code } from "astro:components";
+import EducationItem from "./EducationItem.astro";
+
+const EDUCACION = [
+    {
+        date: "2023 - 2023",
+        title: "Desarrollador Full Stack",
+        universidad: "Soy Henry Bootcamp - Remoto",
+    },
+    {
+        date: "2022 - 2022",
+        title: "Diplomado con énfasis desarrollo web",
+        universidad: "Universidad del Norte - Colombia",
+    },
+    {
+        date: "2020 - 2022",
+        title: "Técnico en desarrollo de software",
+        universidad: "Sena - Colombia",
+    },
+];
+---
+
+<section class="flex flex-col lg:flex-row mt-20">
+    <div class="flex flex-col lg:items-end lg:w-1/2 lg:pr-32 mt-10">
+        <p class="">Certificados de</p>
+        <h2 class="text-3xl lg:text-6xl font-semibold tracking-wide">Educación</h2>
+        <div class="lg:ml-80 mt-5 lg:mt-10">
+            <p class=" lg:text-end leading-7 text-pretty">
+                Educación en desarrollo de páginas web usando HTML5, CSS3,
+                JavaScript, ReactJs, NextJs, Astro, JSON, Node.js, TailwindCSS
+            </p>
+        </div>
+    </div>
+    <div class="lg:w-1/2 mt-10">
+        <ol class="relative border-l border-gray-200 ml-3">
+            {
+                EDUCACION.map((education) => (
+                    <li class="mb-12 ms-4 lg:ms-14">
+                        <EducationItem {...education} />
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</section>
