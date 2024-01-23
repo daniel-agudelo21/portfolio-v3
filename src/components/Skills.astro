@@ -1,0 +1,98 @@
+---
+import React from './technologiesIcons/ReactIcon.astro'
+import NextJSIcon from './technologiesIcons/NextJSIcon.astro'
+import Tailwind from './technologiesIcons/TailwindIcon.astro'
+import Postgres from './technologiesIcons/PostgresIcon.astro'
+import Express from './technologiesIcons/ExpressJSIcon.astro'
+import Nodejs from './technologiesIcons/NodeJSIcon.astro'
+import Redux from './technologiesIcons/ReduxIcon.astro'
+import JavaScript from './technologiesIcons/JavaScriptIcon.astro'
+import TypeScript from './technologiesIcons/TypeScriptIcon.astro'
+import AstroIcon from './technologiesIcons/AstroIcon.astro'
+const TECNOLOGIA = [
+    {
+        icon: React,
+        text: "React",
+    },
+    {
+        
+        icon: Nodejs,
+        text: "Nodejs",
+    },
+    {
+        icon: Tailwind,
+        text: "Tailwind",
+    },
+    {
+        icon: Postgres,
+        text: "PostgreSQL",
+    },
+    {
+        
+        icon: NextJSIcon,
+        text: "NextJs",
+    },
+    {
+        icon: Express,
+        text: "Express",
+    },
+    {
+        icon: Redux,
+        text: "Redux",
+    },
+    {
+        icon: JavaScript,
+        text: "JavaScript",
+    },
+    {
+        
+        icon: AstroIcon,
+        text: "Astro",
+        learning:'Aprendiendo...'
+    },
+    {
+        icon: TypeScript,
+        text: "TypeScript",
+        learning:'Aprendiendo...'
+    },
+];
+---
+
+<section class="flex flex-col">
+    <h2 class="text-3xl lg:text-6xl font-semibold mb-6 my-10 lg:ml-[250px]">
+        Destrezas o habilidades
+    </h2>
+    <div class="flex justify-center items-center">
+        <div class="flex flex-wrap justify-center md:grid md:grid-cols-2 gap-x-10 md:gap-x-32 mt-20">
+            {
+                TECNOLOGIA.map((tecnologia) => (
+                    <div class="hidden md:flex flex-row items-end gap-x-6  mb-20 hover:scale-110 transform hover:transition-transform transition-all ">
+                        <tecnologia.icon class="size-16"/>
+                        <div class="flex flex-col">
+                            {
+                                tecnologia.learning 
+                                ? (
+                                <h2 class="text-xl uppercase mb-2">
+                                {tecnologia.text}
+                                </h2>
+                                <hr class="w-[300px]" />
+                                <h3>{tecnologia.learning}</h3>
+                                )
+                                : <h2 class="text-xl uppercase mb-6">
+                                {tecnologia.text}
+                            </h2>
+                            <hr class="w-[300px]" />
+                            }
+                        </div>
+                    </div>
+                    <div class="flex md:hidden items-baseline justify-center gap-x-4 mb-10">
+                        <tecnologia.icon class="size-16 hover:bg-slate-300 hover:rounded-xl hover:bg-opacity-20 hover:scale-110 transform hover:transition-transform transition-all"/>
+                           
+
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+
+</section>
