@@ -1,5 +1,6 @@
 ---
-import Link from "../components/Link.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import DeployIcon from "../components/icons/Deploy.astro";
 const PROYECTOS = [
     {
         title: "Youtube Clone",
@@ -28,37 +29,46 @@ const PROYECTOS = [
 ];
 ---
 
-<section class="flex flex-col lg:ml-[312px]">
-    <div class="my-10">
+<section class="flex flex-col ">
+    <div class="my-10 lg:ml-[250px]">
         <p class="">Destacados</p>
         <h2 class="text-3xl lg:text-6xl font-semibold mb-6">Proyectos</h2>
         <p>Una colección de los proyectos que he realizado recientemente</p>
     </div>
-    <div class="flex flex-col justify-center items-center lg:justify-evenly lg:flex-row">
+    <div
+        class="flex flex-col justify-center items-center lg:justify-evenly lg:flex-row"
+    >
         {
             PROYECTOS.map(({ title, descripcion, github, deploy, image }) => (
-                <article>
-                    <h3>{title}</h3>
-                    <p>{descripcion}</p>
+                <article class=" mb-14  flex flex-col">
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-2">{title}</h3>
                     <div class="group relative size-80 ">
                         <img
                             loading="lazy"
-                            class="rounded-3xl shadow-2xl shadow-white/10 aspect-auto size-80 transform group-hover:scale-90 transition-transform duration-300  object-cover"
+                            class="flex justify-center rounded-3xl shadow-2xl shadow-white/10 aspect-auto size-80 transform group-hover:scale-90 transition-transform duration-300  object-cover"
                             src={image}
                             alt={`screenshot del proyecto ${title}`}
                         />
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 group-hover:rounded-3xl  flex items-center justify-center">
                             {github && (
-                                <Link
+                                <a target="_blank"
                                     class=" opacity-0 group-hover:opacity-100 group-hover:scale-110 hover:text-orange-300 transition-transform duration-300"
                                     href={github}
                                 >
-                                    GitHub
-                                </Link>
+                                    <GitHubIcon class="size-10" />
+                                </a>
                             )}
-                            {deploy && <Link class="opacity-0 group-hover:opacity-100 group-hover:scale-110 hover:text-orange-300 transition-transform duration-300" href={deploy}>Deploy</Link>}
+                            {deploy && (
+                                <a target="_blank"
+                                    class="opacity-0 group-hover:opacity-100 group-hover:scale-110 hover:text-orange-300 transition-transform duration-300"
+                                    href={deploy}
+                                >
+                                    <DeployIcon class="size-10" />
+                                </a>
+                            )}
                         </div>
                     </div>
+                    <p class="w-[320px] hidden md:block">{descripcion}</p>
                 </article>
             ))
         }
