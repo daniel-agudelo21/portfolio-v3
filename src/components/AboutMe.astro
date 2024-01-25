@@ -1,16 +1,19 @@
 ---
+import SocialLinks from "./SocialLinks.astro";
+import LinkIcon from "./icons/LinkIcon.astro";
+
 
 ---
-<section class="flex flex-row">
-    <div class="w-1/2">
-        <h1>imagen</h1>
-        <hr>
+<section class="flex flex-col xl:flex-row ">
+    <div class="xl:w-1/2 flex justify-center">
+        <img class="rounded-lg " width="350"  src="/assest/daniel.webp" alt="Daniel">
+        
     </div> 
         
-    <div class="w-1/2">
+    <div class="xl:w-1/2 flex-col">
         <p class="text-xl">Hola, soy</p>
-        <h2 class="text-7xl font-semibold">Daniel Agudelo</h2>
-        <div class="border mt-12 mr-20">
+        <h2 class="text-5xl md:text-7xl font-semibold">Daniel Agudelo</h2>
+        <div class=" mt-12 md:mr-20 text-pretty">
 
             <p class=" leading-9">
                 De Medellín, Colombia. Soy un entuciasta por el aprendizaje, también
@@ -19,12 +22,15 @@
                 crear diseños de proyectos geniales.
             </p>
             <br>
-            <p>
+            <p class=" leading-9">
                 Aunque comencé hace relativamente poco me encanta el desarrollo web
                 y me gusta estar practicando, reforzando conocimiento y mejorando
                 progresivamente.
             </p>
         </div>
+        <div class="flex justify-center md:justify-start mt-12">
 
+            <SocialLinks  href="/assest/CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> Hoja de vida</SocialLinks>
+        </div>
     </div>
 </section>
