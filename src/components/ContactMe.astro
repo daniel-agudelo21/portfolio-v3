@@ -16,13 +16,16 @@ const INFO = [
         <p>Conectémonos</p>
         <h2 class="text-3xl lg:text-6xl font-semibold mb-6 ">Hagamos magia juntos</h2>
     </div>
-    <div class="flex flex-row gap-x-20 ">
-        <div class="  flex flex-col gap-y-6">
+    <div class="flex flex-col lg:flex-row gap-x-20 ">
+        <div class="border md:border-none  flex flex-col gap-y-6">
             {
                 INFO.map((informacion) => (
-                    <div class="border h-36 w-72 flex flex-col gap-y-3 items-start ">
+                    <div class=" hidden border h-36 w-72 md:flex flex-col gap-y-3 items-start ">
                         <h3 class="mt-2">{informacion.tipo}</h3>
                         <p class="mt-4">{informacion.contacto}</p>
+                    </div>
+                    <div class="md:hidden">
+                    <h3>{informacion.contacto}</h3>    
                     </div>
                 ))
             }
