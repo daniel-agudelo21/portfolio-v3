@@ -11,7 +11,7 @@ const INFO = [
 ];
 ---
 
-<section class="flex flex-col items-center">
+<section class={`${Astro.props.class} flex flex-col items-center`} id="contact" data-section="contact">
     <div>
         <p>Conectémonos</p>
         <h2 class="text-3xl lg:text-6xl font-semibold mb-6 ">Hagamos magia juntos</h2>
@@ -50,8 +50,8 @@ const INFO = [
                 />
                 <div class="col-span-2">
                     <div class="flex flex-col mb-6">
-                        <label class="mb-2" for="nombre">Nombre completo</label>
-                        <input type="text" name="nombre" id="nombre" />
+                        <label class="mb-2" for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" size="26" class="px-2" />
                     </div>
                 </div>
                 <div class="col-span-2 ">
@@ -59,14 +59,14 @@ const INFO = [
                         <label class="mb-2" for="email"
                             >correo electrónico</label
                         >
-                        <input type="email" name="email" id="email" />
+                        <input type="email" name="email" id="email" size="26" class="px-2" />
                     </div>
                 </div>
                 <div class="col-span-4">
                     <div class="flex flex-col">
                         <label class="mb-2" for="mensaje">Mensaje</label>
                         <textarea
-                            class="resize-none"
+                            class="resize-none px-2"
                             name="mensaje"
                             id="mensaje"
                             cols='50"'
