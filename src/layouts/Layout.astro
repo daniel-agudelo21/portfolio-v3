@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 interface Props {
 	title: string;
 	description: string;
@@ -18,8 +19,9 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions/>
 	</head>
-	<body class="bg-[#F7EEDD] dark:bg-[#0D1F2D] ">
+	<body class="bg-[#F7EEDD] dark:bg-[#0D1F2D]">
 		<Header />
 		<slot />
 		<Footer/>
@@ -32,6 +34,12 @@ const { title, description } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		min-height: 100vh;
+		scroll-behavior: smooth;
+	}
+	@media (prefers-reduced-motion: reduce){
+		html {
+			scroll-behavior: auto;
+		}
 	}
 	code {
 		font-family:
