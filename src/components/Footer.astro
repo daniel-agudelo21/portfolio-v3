@@ -1,3 +1,11 @@
+---
+import ArrowUp from "./icons/ArrowUp.astro"
+const currentYear = new Date().getFullYear()
+---
 <section class="flex justify-center items-center my-8">
-    <h2>© 2024 DanDev</h2>
+    <h2>© {currentYear} DanDev</h2>
+    <a class="flex flex-row gap-1 border border-gray-200 border-opacity-20 hover:scale-110 transition-transform duration-300 rounded-full px-2" href="#top">
+        <ArrowUp />
+        <p>subir</p>
+    </a>
 </section>
