@@ -4,7 +4,7 @@ import LinkIcon from "./icons/LinkIcon.astro";
 
 
 ---
-<section class="flex flex-col xl:flex-row ">
+<section class={`${Astro.props.class} flex flex-col xl:flex-row h-full`} id="about" data-section="about">
     <div class="xl:w-1/2 flex justify-center">
         <img class="rounded-lg " width="350"  src="/assest/daniel.webp" alt="Daniel">
         
