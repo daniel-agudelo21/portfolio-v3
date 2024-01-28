@@ -11,13 +11,13 @@ const INFO = [
 ];
 ---
 
-<section class={`${Astro.props.class} flex flex-col items-center`} id="contact" data-section="contact">
-    <div>
+<section class={`${Astro.props.class} flex flex-col md:items-center mt-20 md:mt-0 gap-y-16`} id="contact" data-section="contact">
+    <div class="flex flex-col items-start justify-start ">
         <p>Conectémonos</p>
         <h2 class="text-3xl lg:text-6xl font-semibold mb-6 ">Hagamos magia juntos</h2>
     </div>
     <div class="flex flex-col lg:flex-row gap-x-20 ">
-        <div class="border md:border-none  flex flex-col gap-y-6">
+        <div class="border flex-col md:border-none  flex md:flex-row md:gap-x-2 xl:flex-col  gap-y-6">
             {
                 INFO.map((informacion) => (
                     <div class=" hidden border h-36 w-72 md:flex flex-col gap-y-3 items-start ">
