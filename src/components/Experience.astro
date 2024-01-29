@@ -1,0 +1,43 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+
+const EXPERIENCIA = [
+    {
+        date: "Septiembre 2023 - Enero 2024",
+        title: "Desarrollador Analista Junior",
+        empresa: "Talento Cloud",
+        descripcion: ""
+    },
+    {
+        date: "2022 - 2022",
+        title: "Teaching Assitant",
+        empresa: "Soy Henry Bootcamp",
+        descripcion: ""
+    },
+
+];
+---
+
+<section class={`${Astro.props.class} flex flex-col lg:flex-row mt-20`} id="education" data-section="education">
+    <div class="flex flex-col lg:items-end lg:w-1/2 lg:pr-32 mt-10">
+        <p class="">Certificados de</p>
+        <h2 class="text-3xl lg:text-6xl font-semibold tracking-wide">Experiencia</h2>
+        <div class="2xl:ml-80 mt-5 lg:mt-10">
+            <p class=" lg:text-end leading-7 text-pretty">
+                Educación en desarrollo de páginas web usando HTML5, CSS3,
+                JavaScript, ReactJs, NextJs, Astro, JSON, Node.js, TailwindCSS
+            </p>
+        </div>
+    </div>
+    <div class="lg:w-1/2 mt-10">
+        <ol class="relative border-l border-[#FFD299] dark:border-[#FFE0C8] ml-3">
+            {
+                EXPERIENCIA.map((experiencia) => (
+                    <li class="mb-12 ms-4 lg:ms-14">
+                        <ExperienceItem {...experiencia} />
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</section>

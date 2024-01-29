@@ -1,0 +1,23 @@
+---
+interface Props {
+    title: string;
+    date: string;
+    empresa: string;
+    descripcion: string;
+}
+
+const { title, date, empresa,descripcion } = Astro.props;
+---
+
+<div
+    class="absolute w-3 h-3 rounded-full mt-12 -start-1.5 border border-gray-900 bg-[#8B4513] dark:bg-[#FF3D3D] "
+>
+</div>
+<h3 class="text-2xl mb-2 font-semibold">{title}</h3>
+<p>{descripcion}</p>
+<p class="mb-4 mt-1">{empresa}</p>
+<time
+    datetime=""
+    class="mt-10 text-sm "
+    >{date}</time
+>
