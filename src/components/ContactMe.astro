@@ -11,31 +11,47 @@ const INFO = [
 ];
 ---
 
-<section class={`${Astro.props.class} flex flex-col md:items-center mt-20 md:mt-0 gap-y-16`} id="contact" data-section="contact">
-    <div class="flex flex-col items-start justify-start ">
+<section
+    class={`${Astro.props.class} flex flex-col md:items-center mt-20 lg:mt-0 gap-y-6 md:gap-y-16`}
+    id="contact"
+    data-section="contact"
+>
+    <div class="flex flex-col items-start justify-start">
         <p>Conectémonos</p>
-        <h2 class="text-3xl lg:text-6xl font-semibold mb-6 ">Hagamos magia juntos</h2>
+        <h2 class="text-3xl lg:text-6xl font-semibold mb-6">
+            Hagamos magia juntos
+        </h2>
     </div>
-    <div class="flex flex-col lg:flex-row gap-x-20 ">
-        <div class="border flex-col md:border-none  flex md:flex-row md:gap-x-2 xl:flex-col  gap-y-6">
+    <div class="flex flex-col lg:flex-row gap-x-6 gap-y-6">
+        <div
+            class="bg-[#EDE4D3] dark:bg-[#1D2E3D] mb-8 md:mb-0 shadow-md md:shadow-none rounded-md flex-col items-center md:bg-transparent md:dark:bg-transparent flex md:flex-row md:gap-x-2 lg:flex-col gap-y-6"
+        >
             {
                 INFO.map((informacion) => (
-                    <div class=" hidden border h-36 w-72 md:flex flex-col gap-y-3 items-start ">
-                        <h3 class="mt-2">{informacion.tipo}</h3>
-                        <p class="mt-4">{informacion.contacto}</p>
-                    </div>
-                    <div class="md:hidden">
-                    <h3>{informacion.contacto}</h3>    
-                    </div>
+                    <>
+                        <div class=" hidden bg-[#EDE4D3] dark:bg-[#1D2E3D] shadow-md rounded-md h-36 w-72 md:flex flex-col gap-y-3 items-start ">
+                            <h3 class="mt-4 ml-8 text-xl font-semibold">
+                                {informacion.tipo}
+                            </h3>
+                            <p class="mt-4 flex ml-8 text-xl md:text-lg">
+                                {informacion.contacto}
+                            </p>
+                        </div>
+                        <div class="md:hidden text-lg font-semibold">
+                            <h3>{informacion.contacto}</h3>
+                        </div>
+                    </>
                 ))
             }
         </div>
 
-        <div class="flex flex-col justify-center">
+        <div
+            class="flex flex-col justify-center bg-[#EDE4D3] dark:bg-[#1D2E3D] shadow-md rounded-md"
+        >
             <form
                 action="https://formsubmit.co/daniel.agudelo185@gmail.com"
                 method="POST"
-                class="grid grid-cols-4 gap-x-4"
+                class="grid grid-cols-4 gap-x-4 mx-4 lg:mx-10 my-8 lg:my-0"
             >
                 <input type="hidden" name="_captcha" value="false" />
                 <input
@@ -46,34 +62,53 @@ const INFO = [
                 <input
                     type="hidden"
                     name="_next"
-                    value="https://yourdomain.co/thanks.html"
+                    value="http://127.0.0.1:4321/thanks"
                 />
                 <div class="col-span-2">
                     <div class="flex flex-col mb-6">
-                        <label class="mb-2" for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" size="26" class="px-2" />
+                        <label class="mb-2 text-xl font-semibold" for="nombre"
+                            >Nombre</label
+                        >
+                        <input
+                            type="text"
+                            name="nombre"
+                            id="nombre"
+                            size="26"
+                            class="px-2 bg-[#C4BCAB] dark:bg-[#354656] rounded-md shadow-md"
+                        />
                     </div>
                 </div>
-                <div class="col-span-2 ">
+                <div class="col-span-2">
                     <div class="flex flex-col">
-                        <label class="mb-2" for="email"
+                        <label class="mb-2 text-xl font-semibold" for="email"
                             >correo electrónico</label
                         >
-                        <input type="email" name="email" id="email" size="26" class="px-2" />
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            size="26"
+                            class="px-2 bg-[#C4BCAB] dark:bg-[#354656] rounded-md shadow-md"
+                        />
                     </div>
                 </div>
                 <div class="col-span-4">
                     <div class="flex flex-col">
-                        <label class="mb-2" for="mensaje">Mensaje</label>
+                        <label class="mb-2 text-xl font-semibold" for="mensaje"
+                            >Mensaje</label
+                        >
                         <textarea
-                            class="resize-none px-2"
+                            class="resize-none px-2 bg-[#C4BCAB] dark:bg-[#354656] rounded-md shadow-md"
                             name="mensaje"
                             id="mensaje"
                             cols='50"'
                             rows="5"></textarea>
                     </div>
                 </div>
-                <button class="col-end-5 col-span-1 mt-8" type="submit">Enviar</button>
+                <button
+                    class="col-end-5 col-span-1 my-4 md:my-0 md:mt-4 bg-[#FFD299] text-[#8B4513] dark:bg-[#FFE0C8] dark:text-[#FF3D3D] rounded-md mx-auto px-2 hover:scale-110 transition-transform duration-300 shadow-md dark:shadow-gray-500 text-xl"
+                    type="submit">Enviar</button
+                >
             </form>
         </div>
     </div>
