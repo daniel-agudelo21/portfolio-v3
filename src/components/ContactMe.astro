@@ -28,19 +28,19 @@ const INFO = [
         >
             {
                 INFO.map((informacion) => (
-                    <>
+                    <article>
                         <div class=" hidden bg-[#EDE4D3] dark:bg-[#1D2E3D] shadow-md rounded-md h-36 w-72 md:flex flex-col gap-y-3 items-start ">
-                            <h3 class="mt-4 ml-8 text-xl font-semibold">
+                            <h3 class="mt-4 ml-6 text-xl font-semibold">
                                 {informacion.tipo}
                             </h3>
-                            <p class="mt-4 flex ml-8 text-xl md:text-lg">
+                            <p class="mt-4 flex ml-6 text-xl md:text-lg">
                                 {informacion.contacto}
                             </p>
                         </div>
                         <div class="md:hidden text-lg font-semibold">
                             <h3>{informacion.contacto}</h3>
                         </div>
-                    </>
+                    </article>
                 ))
             }
         </div>
