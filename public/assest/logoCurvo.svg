@@ -6,14 +6,11 @@
         fill: rgba(0, 0, 0, 0);
       }
 
-      .cls-1, .cls-2 {
-        stroke: #231f20;
-        stroke-miterlimit: 10;
-        stroke-width: .25px;
-      }
-
       .cls-2 {
-        fill: #F6FAF7;
+        fill: #2C2C2C;
+      }
+      @media (prefers-color-scheme: dark) {
+        .cls-2 {fill: #E0E0E0}
       }
     </style>
   </defs>
