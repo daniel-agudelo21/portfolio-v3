@@ -1,36 +1,71 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
 import LinkIcon from "./icons/LinkIcon.astro";
-
-
 ---
-<section class={`${Astro.props.class} flex flex-col xl:flex-row h-full mt-32  md:mt-0`} id="about" data-section="about">
+
+<section
+    class={`${Astro.props.class} flex flex-col xl:flex-row h-full mt-32  md:mt-0`}
+    id="about"
+    data-section="about"
+>
     <div class="xl:w-1/2 flex justify-center">
-        <img class="rounded-lg " width="350"  src="/assest/daniel.webp" alt="Daniel">
-        
-    </div> 
-        
+        <div class="flex justify-center items-center">
+            <img
+                class="rounded-lg"
+                width="350"
+                src="/assest/daniel.webp"
+                alt="Daniel Agudelo foto"
+            />
+        </div>
+    </div>
+
     <div class="xl:w-1/2 flex-col mt-10 md:mt-0">
         <p class="text-xl">Hola, soy</p>
         <h2 class="text-5xl md:text-7xl font-semibold">Daniel Agudelo</h2>
-        <div class=" mt-12 md:mr-20 text-pretty">
-
-            <p class=" leading-9">
-                De Medellín, Colombia. Soy un entuciasta por el aprendizaje, también
-                soy bueno en React, NextJS y Astro. Soy Full Stack pero me encanta
-                el Front End. He estado estudiando sobre diseño UI UX, me gusta
-                crear diseños de proyectos geniales.
+        <div
+            class="mt-12 md:mr-20 text-pretty [&>p>strong]:text-[#8B4513] [&>p>strong]:dark:text-[#FF3D3D] [&>p>strong]:font-semibold"
+        >
+            <p class="leading-9">
+                Al salir del colegio, mi elección académica fue un camino
+                indeciso. Inicialmente en ingeniería por recomendación, pero la
+                presión social me llevó a reconsiderar. Después de explorar
+                opciones, <strong
+                    >la programación se cruzó de nuevo en mi camino, esta vez
+                    con una determinación inquebrantable.</strong
+                >
             </p>
-            <br>
-            <p class=" leading-9">
-                Aunque comencé hace relativamente poco me encanta el desarrollo web
-                y me gusta estar practicando, reforzando conocimiento y mejorando
-                progresivamente.
+            <br />
+            <p class="leading-9">
+                El Bootcamp Soy Henry marcó un punto de inflexión. Además de las
+                bases técnicas, <strong
+                    >fui reconocido por mi habilidad en el trabajo en equipo,
+                    obteniendo una medalla.</strong
+                >
+            </p>
+            <br />
+            <p class="leading-9">
+                <strong
+                    >Mi interés se inclina hacia el FrontEnd, el diseño web y la
+                    experiencia del usuario</strong
+                >, explorando el fascinante mundo del UI/UX. <strong
+                    >Creo firmemente que la fusión de funcionalidad técnica y
+                    estética es clave para experiencias únicas.</strong
+                >
+            </p>
+            <br />
+            <p class=" px-4 flex flex-col items-end ">
+                <cite
+                    ><q
+                        >El camino hacia la excelencia está siempre en
+                        construcción.</q
+                    ></cite
+                > - Marco Aurelio
             </p>
         </div>
         <div class="flex justify-center md:justify-start mt-12">
-
-            <SocialLinks  href="/assest/CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> Hoja de vida</SocialLinks>
+            <SocialLinks href="/assest/CV_Daniel_Agudelo.pdf">
+                <LinkIcon class="size-7" /> Hoja de vida
+            </SocialLinks>
         </div>
     </div>
 </section>
