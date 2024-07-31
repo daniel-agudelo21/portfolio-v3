@@ -2,119 +2,119 @@
 import GitHubIcon from "../components/icons/GitHub.astro";
 import DeployIcon from "../components/icons/Deploy.astro";
 const PROYECTOS = [
-    {
-        title: "Artesanías Market",
-        descripcion:
-            "Este e-commerce fue diseñado con el propósito de ofrecer una plataforma virtual única para vendedores ambulantes, permitiéndoles crear sus propias tiendas online y vender productos artesanales de manera fácil y segura. Mi contribución se centró en la implementación de una interfaz de usuario intuitiva y atractiva.",
-        github: "",
-        deploy: "https://market-artesanias.vercel.app/",
-        image: "/assest/ArtesaniaMarket.jpg",
-        tecnologia: "React - Redux - TailwindCss - JavaScript",
-        stack: "FrontEnd",
-    },
-    {
-        title: "Youtube Clone",
-        descripcion:
-            "Práctica de FrontEnd. Utilicé React para la interfaz, TailwindCSS para el diseño y estilos, junto con RapidApi para acceder a datos esenciales de YouTube, ofreciendo una experiencia de usuario auténtica.",
-        github: "https://github.com/daniel-agudelo21/youtubeClone",
-        deploy: "",
-        image: "/assest/YouTube.webp",
-        tecnologia: "React - Tailwind - RapidApi - JavaScript",
-        stack: "FrontEnd",
-    },
-    {
-        title: "Ferretería RoFe",
-        descripcion:
-            "En este proyecto, me enfoqué en el desarrollo del front-end de un gestor de inventario para una ferretería, utilizando tecnologías modernas como React, Next.js y Redux. El objetivo era crear una experiencia intuitiva y eficiente para la gestión de productos, stock, precios y movimientos.",
-        github: "",
-        deploy: "https://pf-ferreteria.vercel.app/login",
-        image: "/assest/Ferreteria.webp",
-        tecnologia: "React - NextJs - Redux - JavaScript",
-        stack: "FrontEnd",
-    },
-    {
-        title: "Countries",
-        descripcion:
-            "Aplicación que brinda a los usuarios la exploración de información detallada sobre países, desde continente hasta población. Además, permite la creación y asignación de actividades a países. Incorpora filtros, ordenamientos y búsqueda para un acceso eficiente.",
-        github: "https://github.com/daniel-agudelo21/COUNTRIES-Proyecto-individual",
-        deploy: "",
-        image: "/assest/Country.webp",
-        tecnologia: "React - Redux - NodeJs - Express - Postgres - JavaScript",
-        stack: "FullStack",
-    },
+  {
+    title: "Agentes de valorant",
+    descripcion:
+      "Aplicacion donde puedes visualizar la informacion de los agentes de Valorant, Tactical Shooter de Riot Games, con filtros por roles y nombre, seccion de detalle del agente y navegacion fluida. Totalmente responsive para diferentes formatos",
+    github: "",
+    deploy: "https://valorant-agents-mauve.vercel.app/",
+    image: "/assest/VAL.webp",
+    tecnologia: "Nextjs - TailwindCss - JavaScript",
+    stack: "FrontEnd",
+  },
+  {
+    title: "Artesanías Market",
+    descripcion:
+      "Este e-commerce fue diseñado con el propósito de ofrecer una plataforma virtual única para vendedores ambulantes, permitiéndoles crear sus propias tiendas online y vender productos artesanales de manera fácil y segura. Mi contribución se centró en la implementación de una interfaz de usuario intuitiva y atractiva.",
+    github: "",
+    deploy: "https://market-artesanias.vercel.app/",
+    image: "/assest/ArtesaniaMarket.jpg",
+    tecnologia: "React - Redux - TailwindCss - JavaScript",
+    stack: "FrontEnd",
+  },
+  {
+    title: "Youtube Clone",
+    descripcion:
+      "Práctica de FrontEnd. Utilicé React para la interfaz, TailwindCSS para el diseño y estilos, junto con RapidApi para acceder a datos esenciales de YouTube, ofreciendo una experiencia de usuario auténtica.",
+    github: "https://github.com/daniel-agudelo21/youtubeClone",
+    deploy: "",
+    image: "/assest/YouTube.webp",
+    tecnologia: "React - Tailwind - RapidApi - JavaScript",
+    stack: "FrontEnd",
+  },
+  {
+    title: "Ferretería RoFe",
+    descripcion:
+      "En este proyecto, me enfoqué en el desarrollo del front-end de un gestor de inventario para una ferretería, utilizando tecnologías modernas como React, Next.js y Redux. El objetivo era crear una experiencia intuitiva y eficiente para la gestión de productos, stock, precios y movimientos.",
+    github: "",
+    deploy: "https://pf-ferreteria.vercel.app/login",
+    image: "/assest/Ferreteria.webp",
+    tecnologia: "React - NextJs - Redux - JavaScript",
+    stack: "FrontEnd",
+  },
+//   {
+//     title: "Countries",
+//     descripcion:
+//       "Aplicación que brinda a los usuarios la exploración de información detallada sobre países, desde continente hasta población. Además, permite la creación y asignación de actividades a países. Incorpora filtros, ordenamientos y búsqueda para un acceso eficiente.",
+//     github: "https://github.com/daniel-agudelo21/COUNTRIES-Proyecto-individual",
+//     deploy: "",
+//     image: "/assest/Country.webp",
+//     tecnologia: "React - Redux - NodeJs - Express - Postgres - JavaScript",
+//     stack: "FullStack",
+//   },
 ];
 ---
 
 <section
-    class={`${Astro.props.class} flex flex-col mt-10  md:mt-0`}
-    id="projects"
-    data-section="projects"
+  class={`${Astro.props.class} flex flex-col mt-10  md:mt-0 `}
+  id="projects"
+  data-section="projects"
 >
-    <div class="my-10 lg:ml-[250px]">
-        <p class="">Destacados</p>
-        <h2 class="text-3xl lg:text-6xl font-semibold mb-6">Proyectos</h2>
-        <p>Una colección de los proyectos que he realizado recientemente</p>
-    </div>
-    <div
-        class="flex flex-col md:flex-wrap gap-x-6 justify-center items-center lg:items-start lg:justify-evenly lg:flex-row"
-    >
-        {
-            PROYECTOS.map(
-                ({
-                    title,
-                    descripcion,
-                    github,
-                    deploy,
-                    image,
-                    tecnologia,
-                    stack,
-                }) => (
-                    <article class=" mb-14  flex flex-col">
-                        <h3 class="text-2xl md:text-3xl font-semibold mb-2">
-                            {title}
-                        </h3>
-                        <div class="group relative size-80 ">
-                            <img
-                                loading="lazy"
-                                class="flex justify-center rounded-3xl shadow-2xl shadow-white/10 aspect-auto size-80 transform group-hover:scale-90 transition-transform duration-300  object-cover"
-                                src={image}
-                                alt={`screenshot del proyecto ${title}`}
-                            />
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 group-hover:rounded-3xl  flex items-center justify-center">
-                                {github && (
-                                    <a
-                                        target="_blank"
-                                        class=" opacity-0 group-hover:opacity-100 group-hover:scale-110 text-[#FF7F50] dark:text-[#AFFFFF] dark:hover:text-[#FFE0C8] hover:text-[#FFD299] transition-transform duration-300"
-                                        href={github}
-                                        aria-label={`GitHub del proyecto ${title}`}
-                                    >
-                                        <GitHubIcon class="size-10 hover:scale-125 transition-transform duration-300 " />
-                                    </a>
-                                )}
-                                {deploy && (
-                                    <a
-                                        target="_blank"
-                                        class="opacity-0 group-hover:opacity-100 group-hover:scale-110 text-[#FF7F50] dark:text-[#AFFFFF] dark:hover:text-[#FFE0C8] hover:text-[#FFD299] transition-transform duration-300"
-                                        href={deploy}
-                                        aria-label={`Deploy del proyecto ${title}`}
-                                    >
-                                        <DeployIcon class="size-10 hover:scale-125 transition-transform duration-300" />
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                        <div class="mt-4 flex-col w-[320px]">
-                            <h3 class="text-xl font-semibold ">{stack}</h3>
-                            <p class="w-[320px] hidden md:block text-balance">
-                                {descripcion}
-                            </p>
-                            <p class="text-lg text-pretty text-[#8F1E00] dark:text-[#AFFFFF]/80 font-semibold">
-                                {tecnologia}
-                            </p>
-                        </div>
-                    </article>
-                ),
-            )
-        }
-    </div>
+  <div class="my-10 lg:ml-[250px] xl:ml-[100px] mb-20">
+    <p class="">Destacados</p>
+    <h2 class="text-3xl lg:text-6xl font-semibold mb-6">Proyectos</h2>
+    <p>Una colección de los proyectos que he realizado recientemente</p>
+  </div>
+  <div
+    class="flex flex-col md:flex-wrap gap-x-6 justify-center items-center lg:items-start lg:justify-evenly lg:flex-row"
+  >
+    {
+      PROYECTOS.map(
+        ({ title, descripcion, github, deploy, image, tecnologia, stack }) => (
+          <article class=" mb-14  flex flex-col items-center ">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-2">{title}</h3>
+            <div class="group relative size-72  md:size-80 shadow-xl rounded-3xl">
+              <img
+                loading="lazy"
+                class="flex justify-center rounded-3xl  shadow-white/10 aspect-auto size-72  md:size-80 transform group-hover:scale-90 transition-transform duration-300  object-cover "
+                src={image}
+                alt={`screenshot del proyecto ${title}`}
+              />
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 group-hover:rounded-3xl  flex items-center justify-center">
+                {github && (
+                  <a
+                    target="_blank"
+                    class=" opacity-0 group-hover:opacity-100 group-hover:scale-110 text-[#FF7F50] dark:text-[#AFFFFF] dark:hover:text-[#FFE0C8] hover:text-[#FFD299] transition-transform duration-300"
+                    href={github}
+                    aria-label={`GitHub del proyecto ${title}`}
+                  >
+                    <GitHubIcon class="size-10 hover:scale-125 transition-transform duration-300 " />
+                  </a>
+                )}
+                {deploy && (
+                  <a
+                    target="_blank"
+                    class="opacity-0 group-hover:opacity-100 group-hover:scale-110 text-[#FF7F50] dark:text-[#AFFFFF] dark:hover:text-[#FFE0C8] hover:text-[#FFD299] transition-transform duration-300"
+                    href={deploy}
+                    aria-label={`Deploy del proyecto ${title}`}
+                  >
+                    <DeployIcon class="size-10 hover:scale-125 transition-transform duration-300" />
+                  </a>
+                )}
+              </div>
+            </div>
+            <div class="mt-4 flex-col md:w-[320px]">
+              <h3 class="text-xl font-semibold ">{stack}</h3>
+              <p class="w-[320px] hidden md:block text-balance">
+                {descripcion}
+              </p>
+              <p class="text-lg text-pretty text-[#8F1E00] dark:text-[#AFFFFF]/80 font-semibold">
+                {tecnologia}
+              </p>
+            </div>
+          </article>
+        )
+      )
+    }
+  </div>
 </section>
