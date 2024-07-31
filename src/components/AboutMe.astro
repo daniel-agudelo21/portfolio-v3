@@ -4,7 +4,7 @@ import LinkIcon from "./icons/LinkIcon.astro";
 ---
 
 <section
-    class={`${Astro.props.class} flex flex-col xl:flex-row h-full mt-32  md:mt-0`}
+    class={`${Astro.props.class} flex flex-col xl:flex-row h-full mt-32  md:mt-0 mx-auto`}
     id="about"
     data-section="about"
 >
@@ -12,15 +12,15 @@ import LinkIcon from "./icons/LinkIcon.astro";
         <div class="flex justify-center items-center">
             <img
                 loading="lazy"
-                class="rounded-lg"
-                width="350"
+                class="rounded-lg shadow-[2px_2px_5px_2px_rgba(0,0,0,0.3)]"
+                width="500"
                 src="/assest/daniel.webp"
                 alt="Daniel Agudelo foto"
             />
         </div>
     </div>
 
-    <div class="xl:w-1/2 flex-col mt-10 md:mt-0">
+    <div class="xl:w-1/2 flex-col mt-10 xl:mt-0">
         <p class="text-xl">Hola, soy</p>
         <h2 class="text-5xl md:text-7xl font-semibold">Daniel Agudelo</h2>
         <div
