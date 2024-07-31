@@ -16,10 +16,10 @@ import ContactMe from "../components/ContactMe.astro";
 	<main class="mx-2 md:mx-16 flex flex-col">
 		<Home />
 		<div
-			class="md:h-[770px] lg:h-[607px] md:mt-20 mx-auto md:scroll-mt-20 lg:scroll-mt-44 lg:mb-60"
+			class="md:h-[770px] lg:h-[607px] md:mt-20 mx-auto md:scroll-mt-24 lg:scroll-mt-44 lg:mb-60 scroll-mt-32 "
 			id="education"
 		>
-			<div class="tab_box">
+			<div class="tab_box gap-4 md:gap-10">
 				<button
 					class="tab_btn active text-2xl font-semibold px-2 py-1 rounded-md"
 					>Educación</button
@@ -29,7 +29,7 @@ import ContactMe from "../components/ContactMe.astro";
 					>Experiencia</button
 				>
 			</div>
-			<div class="content_box">
+			<div class="">
 				<div class="content active">
 					<Education class="" />
 				</div>
@@ -39,11 +39,11 @@ import ContactMe from "../components/ContactMe.astro";
 			</div>
 		</div>
 
-		<Projects class="lg:mb-60 md:scroll-mt-20 lg:scroll-mt-24" />
+		<Projects class="lg:mb-60 md:scroll-mt-20 lg:scroll-mt-24 scroll-mt-10" />
 
-		<Skills class="lg:mb-60 md:mb-20 md:scroll-mt-20 lg:scroll-mt-14" />
+		<Skills class="lg:mb-60 md:mb-20 md:scroll-mt-20 lg:scroll-mt-14 scroll-m-14" />
 
-		<AboutMe class="lg:mb-60 md:mb-20 md:scroll-mt-28 lg:scroll-mt-48" />
+		<AboutMe class="lg:mb-60 md:mb-20 md:scroll-mt-28 lg:scroll-mt-48 scroll-mt-24" />
 
 		<ContactMe class="lg:pt-20 md:scroll-mt-20 lg:mb-60" />
 	</main>
@@ -75,7 +75,7 @@ import ContactMe from "../components/ContactMe.astro";
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		column-gap: 2.5rem;
+		
 		margin: auto;
 	}
 	.tab_box .tab_btn.active {
