@@ -2,12 +2,119 @@
 
 ---
 
-<header class="w-full  h-20 flex items-center md:px-16 z-10 sticky md:top-0 backdrop-blur-lg border-b-2 border-[#C4BCAB] dark:border-[#354656]">
-    <nav class="flex flex-grow md:flex-none justify-center items-center space-x-7 md:space-x-20 md:mx-4">
-        <a class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition" href="#education">Educación</a>
-        <a class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition" href="#projects">Proyectos</a>
-        <a class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition" href="#skills">Skills</a>
-        <a class="hidden md:block text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition" href="#about">Sobre mi</a>
-        <a class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition" href="#contact">Contacto</a>
+<!-- <header
+  class="hidden w-full h-20 lg:flex items-center md:px-16 z-10 sticky md:top-0 backdrop-blur-lg border-b-2 border-[#C4BCAB] dark:border-[#354656]"
+>
+  <nav
+    class="flex flex-grow md:flex-none justify-center items-center space-x-7 md:space-x-20 md:mx-4"
+  >
+    <a
+      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+      href="#education">Educación</a
+    >
+    <a
+      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+      href="#projects">Proyectos</a
+    >
+    <a
+      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+      href="#skills">Skills</a
+    >
+    <a
+      class="hidden md:block text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+      href="#about">Sobre mi</a
+    >
+    <a
+      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+      href="#contact">Contacto</a
+    >
+  </nav>
+</header> -->
+<header
+  class="w-full h-20 lg:flex items-center md:px-16 z-10 sticky top-0 backdrop-blur-lg border-b-2 border-[#C4BCAB] dark:border-[#354656] "
+>
+  <button
+    id="hamburger-button"
+    class="text-3xl lg:hidden cursor-pointer flex relative left-4 top-6 size-8"
+  >
+    <div
+      class="bg-black dark:bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:bg-black before:dark:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-black after:dark:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"
+    >
+    </div>
+  </button>
+  <section class="mx-auto p-4 hidden lg:flex justify-between items-center">
+    <div>
+      <nav
+        class="flex flex-grow md:flex-none justify-center items-center space-x-7 md:space-x-20 md:mx-4"
+      >
+        <a
+          class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+          href="#education">Educación</a
+        >
+        <a
+          class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+          href="#projects">Proyectos</a
+        >
+        <a
+          class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+          href="#skills">Skills</a
+        >
+        <a
+          class="hidden md:block text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+          href="#about">Sobre mi</a
+        >
+        <a
+          class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+          href="#contact">Contacto</a
+        >
+      </nav>
+    </div>
+  </section>
+  <section
+    id="mobile-menu"
+    class="relative top-12 bg-[#F7EEDD] dark:bg-[#0D1F2D] backdrop-blur-sm w-full text-4xl flex-col justify-center origin-top hidden"
+  >
+    <nav
+      class="flex flex-col min-h-screen items-center py-8"
+      aria-label="mobile"
+    >
+      <a
+        class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+        href="#education">Educación</a
+      >
+      <a
+        class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+        href="#projects">Proyectos</a
+      >
+      <a
+        class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+        href="#skills">Skills</a
+      >
+      <a
+        class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+        href="#about">Sobre mi</a
+      >
+      <a
+        class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
+        href="#contact">Contacto</a
+      >
     </nav>
+  </section>
 </header>
+
+<script>
+  const initApp = () => {
+    const hamburgerBtn = document.getElementById("hamburger-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const toggleMenu = () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+      hamburgerBtn.classList.toggle("toggle-btn");
+    };
+    hamburgerBtn.addEventListener("click", toggleMenu);
+    mobileMenu.addEventListener("click", toggleMenu);
+  };
+
+  document.addEventListener("DOMContentLoaded", initApp);
+</script>
+
