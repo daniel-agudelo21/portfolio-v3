@@ -1,37 +1,13 @@
 ---
-
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+// import LanguagePicker from "./LanguagePicker.astro";
 ---
 
-<!-- <header
-  class="hidden w-full h-20 lg:flex items-center md:px-16 z-10 sticky md:top-0 backdrop-blur-lg border-b-2 border-[#C4BCAB] dark:border-[#354656]"
->
-  <nav
-    class="flex flex-grow md:flex-none justify-center items-center space-x-7 md:space-x-20 md:mx-4"
-  >
-    <a
-      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-      href="#education">Educación</a
-    >
-    <a
-      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-      href="#projects">Proyectos</a
-    >
-    <a
-      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-      href="#skills">Skills</a
-    >
-    <a
-      class="hidden md:block text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-      href="#about">Sobre mi</a
-    >
-    <a
-      class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-      href="#contact">Contacto</a
-    >
-  </nav>
-</header> -->
 <header
-  class="w-full h-20 lg:flex items-center md:px-16 z-10 sticky top-0 backdrop-blur-lg border-b-2 border-[#C4BCAB] dark:border-[#354656] "
+  class="w-full h-20 lg:flex items-center md:px-16 z-10 sticky top-0 backdrop-blur-lg border-b-2 border-[#C4BCAB] dark:border-[#354656]"
 >
   <button
     id="hamburger-button"
@@ -50,24 +26,25 @@
       >
         <a
           class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-          href="#education">Educación</a
+          href="#education">{t(`nav.education`)}</a
         >
         <a
           class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-          href="#projects">Proyectos</a
+          href="#projects">{t(`nav.projects`)}</a
         >
         <a
           class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-          href="#skills">Skills</a
+          href="#skills">{t(`nav.skills`)}</a
         >
         <a
           class="hidden md:block text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-          href="#about">Sobre mi</a
+          href="#about">{t(`nav.about`)}</a
         >
         <a
           class="text-lg md:text-xl font-semibold text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-          href="#contact">Contacto</a
+          href="#contact">{t(`nav.contact`)}</a
         >
+        <!-- <LanguagePicker /> -->
       </nav>
     </div>
   </section>
@@ -81,23 +58,23 @@
     >
       <a
         class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-        href="#education">Educación</a
+        href="#education">{t(`nav.education`)}</a
       >
       <a
         class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-        href="#projects">Proyectos</a
+        href="#projects">{t(`nav.projects`)}</a
       >
       <a
         class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-        href="#skills">Skills</a
+        href="#skills">{t(`nav.skills`)}</a
       >
       <a
         class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-        href="#about">Sobre mi</a
+        href="#about">{t(`nav.about`)}</a
       >
       <a
         class="w-full text-center py-6 text-black dark:text-white hover:text-[#FF7F50] dark:hover:text-[#AFFFFF] transition"
-        href="#contact">Contacto</a
+        href="#contact">{t(`nav.contact`)}</a
       >
     </nav>
   </section>
@@ -118,4 +95,3 @@
 
   document.addEventListener("DOMContentLoaded", initApp);
 </script>
-

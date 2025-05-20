@@ -4,6 +4,10 @@ import GitHubIcon from "./icons/GitHub.astro";
 import LinkIcon from "./icons/LinkIcon.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro"
 import MailIcon from './icons/Mail.astro'
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section id="home" class=" mb-20 xl:mb-0">
@@ -16,21 +20,20 @@ import MailIcon from './icons/Mail.astro'
             </div>
             <div class="flex lg:ml-14 xl:ml-16 2xl:ml-24">
                 <p class=" justify-center items-center md:text-center lg:text-start">
-                    Soy un desarrollador web Full Stack enfocado en el FrontEnd,
-                    estoy aquí para dar vida a ideas y crear experiencias digitales
-                    que dejen huella.
+                    {t(`home.summary`)}
                 </p>
             </div>
             <div class="flex gap-x-4 pt-6 items-center justify-center lg:hidden xl:flex xl:mt-20">
-                <a class="hidden md:flex gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact" aria-label="Caja de mensaje"><MailIcon class="size-7"/> Contáctame</a>
-                <SocialLinks class="hidden md:flex" href="https://github.com/daniel-agudelo21" aria_label="GitHub de Daniel Agudelo"><GitHubIcon class="size-6"/> GitHub</SocialLinks>
-                <SocialLinks class="hidden md:flex" href="https://www.linkedin.com/in/dan-agud/" aria_label="LinkedIn de Daniel Agudelo"><LinkedInIcon class="size-6"/> LinkedIn</SocialLinks>
-                <SocialLinks class="hidden 2xl:flex" href="/assest/CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> Hoja de vida</SocialLinks>
-    
-                <a class=" md:hidden gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact"  aria-label="Caja de mensaje"><MailIcon class="size-7"/></a>
-                <SocialLinks class="md:hidden" href="https://github.com/daniel-agudelo21" aria_label="GitHub de Daniel Agudelo"><GitHubIcon class="size-6"/></SocialLinks>
-                <SocialLinks class="md:hidden" href="https://www.linkedin.com/in/dan-agud/" aria_label="LinkedIn de Daniel Agudelo"><LinkedInIcon class="size-6"/></SocialLinks>
-                <SocialLinks class=" 2xl:hidden text-xl font-bold tracking-wider" href="/assest/CV_Daniel_Agudelo.pdf"> CV</SocialLinks>
+
+                <a class="hidden md:flex gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact" aria-label="Contact me"><MailIcon class="size-7"/> {t(`home.contactme`)}</a>
+                <SocialLinks class="hidden md:flex" href="https://github.com/daniel-agudelo21" aria_label="Daniel's GitHub"><GitHubIcon class="size-6"/> GitHub</SocialLinks>
+                <SocialLinks class="hidden md:flex" href="https://www.linkedin.com/in/dan-agud/" aria_label="Daniel's LinkedIn"><LinkedInIcon class="size-6"/> LinkedIn</SocialLinks>
+                <SocialLinks class="hidden md:flex" href="/assest/English_CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> {t(`home.cv`)}</SocialLinks>
+                
+                <a class=" md:hidden gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact"  aria-label="Contact me"><MailIcon class="size-7"/></a>
+                <SocialLinks class="md:hidden" href="https://github.com/daniel-agudelo21" aria_label="Daniel's GitHub"><GitHubIcon class="size-6"/></SocialLinks>
+                <SocialLinks class="md:hidden" href="https://www.linkedin.com/in/dan-agud/" aria_label="Daniel's LinkedIn"><LinkedInIcon class="size-6"/></SocialLinks>
+                <SocialLinks class=" md:hidden text-xl font-semibold tracking-wider" href="/assest/English_CV_Daniel_Agudelo.pdf"> CV</SocialLinks>
             </div>
         </div>
         <div class="lg:w-1/2 flex flex-col justify-center items-center">
@@ -43,14 +46,14 @@ import MailIcon from './icons/Mail.astro'
         </div>
     </div>
     <div class="hidden gap-x-4 pt-6 items-center justify-center lg:flex xl:hidden xl:mt-20">
-        <a class="hidden md:flex gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact"  aria-label="Caja de mensaje"><MailIcon class="size-7"/> Contáctame</a>
-        <SocialLinks class="hidden md:flex" href="https://github.com/daniel-agudelo21" aria_label="GitHub de Daniel Agudelo"><GitHubIcon class="size-6"/> GitHub</SocialLinks>
-        <SocialLinks class="hidden md:flex" href="https://www.linkedin.com/in/dan-agud/"  aria_label="LinkedIn de Daniel Agudelo"><LinkedInIcon class="size-6"/> LinkedIn</SocialLinks>
-        <SocialLinks class="hidden 2xl:flex" href="/assest/CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> Hoja de vida</SocialLinks>
+        <a class="hidden md:flex gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact"  aria-label="Contact me"><MailIcon class="size-7"/> {t(`home.contactme`)}</a>
+        <SocialLinks class="hidden md:flex" href="https://github.com/daniel-agudelo21" aria_label="Daniel's GitHub"><GitHubIcon class="size-6"/> GitHub</SocialLinks>
+        <SocialLinks class="hidden md:flex" href="https://www.linkedin.com/in/dan-agud/"  aria_label="Daniel's LinkedIn"><LinkedInIcon class="size-6"/> LinkedIn</SocialLinks>
+        <SocialLinks class="hidden 2xl:flex" href="/assest/English_CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> {t(`home.cv`)}</SocialLinks>
 
-        <a class="md:hidden gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact"  aria-label="Caja de mensaje"><MailIcon class="size-7"/></a>
-        <SocialLinks class="md:hidden" href="https://github.com/daniel-agudelo21" aria_label="GitHub de Daniel Agudelo"><GitHubIcon class="size-6"/></SocialLinks>
-        <SocialLinks class="md:hidden" href="https://www.linkedin.com/in/dan-agud/"  aria_label="LinkedIn de Daniel Agudelo"><LinkedInIcon class="size-6"/></SocialLinks>
-        <SocialLinks class=" 2xl:hidden text-xl font-bold tracking-wider" href="/assest/CV_Daniel_Agudelo.pdf"> CV</SocialLinks>
+        <a class="md:hidden gap-2 px-4 py-2 rounded-md bg-[#FF7F50] text-[#8F1E00] hover:bg-[#DD6236] dark:bg-[#0D6E6E] dark:text-[#AFFFFF] dark:hover:bg-[#4A9D9C] hover:scale-110 transition-transform duration-300 md:text-xl shadow-md" href="#contact"  aria-label="Contact me"><MailIcon class="size-7"/></a>
+        <SocialLinks class="md:hidden" href="https://github.com/daniel-agudelo21" aria_label="Daniel's GitHub"><GitHubIcon class="size-6"/></SocialLinks>
+        <SocialLinks class="md:hidden" href="https://www.linkedin.com/in/dan-agud/"  aria_label="Daniel's LinkedIn"><LinkedInIcon class="size-6"/></SocialLinks>
+        <SocialLinks class=" 2xl:hidden text-xl font-medium tracking-wider" href="/assest/English_CV_Daniel_Agudelo.pdf"><LinkIcon class="size-7" /> {t(`home.cv`)}</SocialLinks>
     </div>
 </section>

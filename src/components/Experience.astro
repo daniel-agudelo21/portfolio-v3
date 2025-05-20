@@ -1,18 +1,29 @@
 ---
 import ExperienceItem from './ExperienceItem.astro'
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const EXPERIENCIA = [
     {
-        date: "Septiembre 2023 - Enero 2024",
-        title: "Desarrollador Analista Junior",
-        empresa: "Talento Cloud",
-        descripcion: "Colaboré en proyectos clave para internacionalizar la plataforma y mejorar informes, enfocándome en optimizar la accesibilidad global y brindar herramientas eficientes para el análisis de datos."
+        date: t(`experience.date1`),
+        title: t("experience.title1"),
+        empresa: t("experience.company1"),
+        descripcion: t("experience.description1")
     },
     {
-        date: "Agosto 2023 - Octubre 2023",
+        date: t(`experience.date2`),
+        title: t("experience.title2"),
+        empresa: t("experience.company2"),
+        descripcion: t("experience.description2")
+    },
+    {
+        date: t(`experience.date3`),
         title: "Teaching Assitant",
         empresa: "Soy Henry Bootcamp",
-        descripcion: "Facilité un entorno de aprendizaje dinámico y colaborativo para alumnos de Soy Henry, co-coordinando un espacio diario y guiándolos en la exploración y comprensión de tecnologías clave como React, Express, Node.js, Sequelize y PostgreSQL."
+        descripcion: t("experience.description3")
+        
     },
 
 ];
@@ -20,12 +31,11 @@ const EXPERIENCIA = [
 
 <section class={`${Astro.props.class} flex flex-col lg:flex-row mt-2 md:mt-20`} id="education" data-section="education">
     <div class="flex flex-col lg:items-end lg:w-1/2 lg:pr-32 mt-10">
-        <p class="">Laboral</p>
-        <h2 class="text-3xl lg:text-6xl font-semibold tracking-wide">Experiencia</h2>
+        <p class="">{t(`experience.work`)}</p>
+        <h2 class="text-3xl lg:text-6xl font-semibold tracking-wide">{t(`nav.experience`)}</h2>
         <div class="2xl:ml-80 mt-5 lg:mt-10">
             <p class=" lg:text-end leading-7 ">
-                Experiencia en desarrollo de páginas web usando HTML5, CSS3,
-                JavaScript, ReactJs, NextJs, Astro, JSON, Node.js, TailwindCSS
+                {t(`experience.subtitle`)}
             </p>
         </div>
     </div>

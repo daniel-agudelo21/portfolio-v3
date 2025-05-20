@@ -9,6 +9,10 @@ import Redux from './technologiesIcons/ReduxIcon.astro'
 import JavaScript from './technologiesIcons/JavaScriptIcon.astro'
 import TypeScript from './technologiesIcons/TypeScriptIcon.astro'
 import AstroIcon from './technologiesIcons/AstroIcon.astro'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
 const TECNOLOGIA = [
     {
         icon: React,
@@ -48,19 +52,19 @@ const TECNOLOGIA = [
         
         icon: AstroIcon,
         text: "Astro",
-        learning:'Aprendiendo...'
+        
     },
     {
         icon: TypeScript,
         text: "TypeScript",
-        learning:'Aprendiendo...'
+        learning:t("skills.learning")
     },
 ];
 ---
 
 <section class={`${Astro.props.class} flex flex-col mt-10  md:mt-0`} id="skills" data-section="skills">
     <h2 class="flex text-2xl lg:text-6xl justify-center xl:ju font-semibold mb-6 my-10">
-        Destrezas o habilidades
+        {t(`skills.title`)}
     </h2>
     <div class="flex justify-center items-center">
         <div class="flex flex-wrap justify-center md:grid md:grid-cols-2 gap-x-10 md:gap-x-32 mt-20">

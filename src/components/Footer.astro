@@ -1,11 +1,15 @@
 ---
 import ArrowUp from "./icons/ArrowUp.astro"
 const currentYear = new Date().getFullYear()
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 <footer class="flex flex-row justify-evenly items-center m-4 w-full md:w-[500px] xl:w-[900px] bg-[#C4BCAB] text-[#2C2C2C] dark:bg-[#354656] dark:text-white rounded-lg mx-auto shadow-md py-2">
         <h2>© {currentYear} <a href="https://www.linkedin.com/in/dan-agud/" target="_blank" class="hover:underline">DaniDev</a> </h2>
         <a class="flex flex-row gap-1 hover:underline px-2" href="#top">
             <ArrowUp />
-            <p>Inicio</p>
+            <p>{t("footer.top")}</p>
         </a>
 </footer> 

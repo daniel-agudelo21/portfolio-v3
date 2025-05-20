@@ -1,11 +1,14 @@
 ---
 import GitHubIcon from "../components/icons/GitHub.astro";
 import DeployIcon from "../components/icons/Deploy.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
 const PROYECTOS = [
   {
-    title: "Agentes de valorant",
-    descripcion:
-      "Aplicacion donde puedes visualizar la informacion de los agentes de Valorant, Tactical Shooter de Riot Games, con filtros por roles y nombre, seccion de detalle del agente y navegacion fluida. Totalmente responsive para diferentes formatos",
+    title: "Valorant Agents",
+    descripcion:t(`projects.description1`),
     github: "",
     deploy: "https://valorant-agents-mauve.vercel.app/",
     image: "/assest/VAL.webp",
@@ -14,8 +17,7 @@ const PROYECTOS = [
   },
   {
     title: "Artesanías Market",
-    descripcion:
-      "Este e-commerce fue diseñado con el propósito de ofrecer una plataforma virtual única para vendedores ambulantes, permitiéndoles crear sus propias tiendas online y vender productos artesanales de manera fácil y segura. Mi contribución se centró en la implementación de una interfaz de usuario intuitiva y atractiva.",
+    descripcion:t(`projects.description2`),
     github: "",
     deploy: "https://market-artesanias.vercel.app/",
     image: "/assest/ArtesaniaMarket.webp",
@@ -24,8 +26,7 @@ const PROYECTOS = [
   },
   {
     title: "Youtube Clone",
-    descripcion:
-      "Práctica de FrontEnd. Utilicé React para la interfaz, TailwindCSS para el diseño y estilos, junto con RapidApi para acceder a datos esenciales de YouTube, ofreciendo una experiencia de usuario auténtica.",
+    descripcion:t(`projects.description3`),
     github: "https://github.com/daniel-agudelo21/youtubeClone",
     deploy: "",
     image: "/assest/YouTube.webp",
@@ -34,8 +35,7 @@ const PROYECTOS = [
   },
   {
     title: "Ferretería RoFe",
-    descripcion:
-      "En este proyecto, me enfoqué en el desarrollo del front-end de un gestor de inventario para una ferretería, utilizando tecnologías modernas como React, Next.js y Redux. El objetivo era crear una experiencia intuitiva y eficiente para la gestión de productos, stock, precios y movimientos.",
+    descripcion:t(`projects.description4`),
     github: "",
     deploy: "https://pf-ferreteria.vercel.app/login",
     image: "/assest/Ferreteria.webp",
@@ -61,9 +61,9 @@ const PROYECTOS = [
   data-section="projects"
 >
   <div class="my-10 lg:ml-[250px] xl:ml-[100px] mb-20">
-    <p class="">Destacados</p>
-    <h2 class="text-3xl lg:text-6xl font-semibold mb-6">Proyectos</h2>
-    <p>Una colección de los proyectos que he realizado recientemente</p>
+    <p class="">{t(`projects.destacated`)}</p>
+    <h2 class="text-3xl lg:text-6xl font-semibold mb-6">{t(`nav.projects`)}</h2>
+    <p>{t(`projects.collections`)}</p>
   </div>
   <div
     class="flex flex-col md:flex-wrap gap-x-6 justify-center items-center lg:items-start lg:justify-evenly lg:flex-row"
