@@ -1,115 +1,72 @@
 ---
-const INFO = [
-    {
-        tipo: "Email",
-        contacto: "daniel.agudelo185@gmail.com",
-    },
-    {
-        tipo: "Teléfono",
-        contacto: "+57 3206724252",
-    },
-];
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Mail from './icons/Mail.astro'
+import Phone from "./icons/Phone.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const email = "daniel.agudelo185@gmail.com";
+const phone = "+573206724252";
+const phoneClean = phone.replace("+", ""); // para wa.me
 ---
 
 <section
-    class={`${Astro.props.class} flex flex-col lg:items-center mt-20 lg:mt-0 gap-y-6 md:gap-y-16`}
-    id="contact"
-    data-section="contact"
+  class={`${Astro.props.class} flex flex-col lg:items-center mt-20 lg:mt-0 gap-y-6 md:gap-y-16`}
+  id="contact"
+  data-section="contact"
 >
-    <div class="flex flex-col items-start justify-start">
-        <p>Conectémonos</p>
-        <h2 class="text-2xl lg:text-6xl font-semibold mb-6">
-            Hagamos magia juntos
-        </h2>
-    </div>
-    <div class="flex flex-col lg:flex-row gap-x-6 gap-y-6">
-        <div
-            class="bg-[#EDE4D3] dark:bg-[#1D2E3D] mb-8 md:mb-0 shadow-md md:shadow-none rounded-md flex-col items-center md:bg-transparent md:dark:bg-transparent flex md:flex-row md:gap-x-6 lg:flex-col gap-y-6 justify-center"
-        >
-            {
-                INFO.map((informacion) => (
-                    <article>
-                        <div class=" hidden bg-[#EDE4D3] dark:bg-[#1D2E3D] shadow-md rounded-md h-40 w-72 md:flex flex-col gap-y-3 items-start ">
-                            <h3 class="mt-4 ml-6 text-xl font-semibold">
-                                {informacion.tipo}
-                            </h3>
-                            <p class="mt-4 flex ml-6 text-xl md:text-lg">
-                                {informacion.contacto}
-                            </p>
-                        </div>
-                        <div class="md:hidden text-lg font-semibold py-4">
-                            <h3>{informacion.contacto}</h3>
-                        </div>
-                    </article>
-                ))
-            }
-        </div>
+  <div class="flex flex-col items-start justify-start">
+    <p class="text-[#8F1E00] dark:text-[#AFFFFF]">{t("contact.title")}</p>
+    <h2 class="text-2xl lg:text-6xl font-semibold mb-6 text-[#8F1E00] dark:text-[#AFFFFF]">
+      {t("contact.subtitle")}
+    </h2>
+  </div>
 
-        <div
-            class="flex flex-col justify-center bg-[#EDE4D3] dark:bg-[#1D2E3D] shadow-md rounded-md "
-        >
-            <form
-                action="https://formsubmit.co/c0e1e3d083e0d3494f7a96f5a83805b1"
-                method="POST"
-                class="grid grid-cols-4 gap-x-4 mx-4 lg:mx-10 my-8 lg:my-0 lg:mt-7"
-            >
-                <input type="hidden" name="_captcha" value="false" />
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="Correo enviado desde el portfolio"
-                />
-                <input
-                    type="hidden"
-                    name="_next"
-                    value="https://daniel-desarrollo-web.netlify.app/thanks"
-                />
-                <div class="col-span-2">
-                    <div class="flex flex-col mb-6">
-                        <label class="mb-2 text-xl font-semibold" for="nombre"
-                            >Nombre</label
-                        >
-                        <input
-                            type="text"
-                            name="nombre"
-                            id="nombre"
-                            size="26"
-                            class="px-2 bg-[#C4BCAB] dark:bg-[#354656] rounded-md shadow-md"
-                        />
-                    </div>
-                </div>
-                <div class="col-span-2">
-                    <div class="flex flex-col">
-                        <label class="mb-2 text-xl font-semibold" for="email"
-                            >Email</label
-                        >
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            size="26"
-                            class="px-2 bg-[#C4BCAB] dark:bg-[#354656] rounded-md shadow-md"
-                        />
-                    </div>
-                </div>
-                <div class="col-span-4">
-                    <div class="flex flex-col">
-                        <label class="mb-2 text-xl font-semibold" for="mensaje"
-                            >Mensaje</label
-                        >
-                        <textarea
-                            class="resize-none px-2 bg-[#C4BCAB] dark:bg-[#354656] rounded-md shadow-md"
-                            name="mensaje"
-                            id="mensaje"
-                            cols='50"'
-                            rows="5"></textarea>
-                    </div>
-                </div>
-                <button
-                    class=" mt-6 md:-ml-0 lg:mb-6 bg-[#FFD299] text-[#8B4513] dark:bg-[#FFE0C8] dark:text-[#FF3D3D] rounded-md mx-auto px-2 hover:scale-110 transition-transform duration-300 shadow-md dark:shadow-gray-500 text-xl"
-                    type="submit">Enviar</button
-                >
-            </form>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full">
+    <!-- Email Card -->
+    <a
+      href={`mailto:${email}`}
+      class="group relative overflow-hidden rounded-xl bg-[#FF7F50] hover:bg-[#DD6236] shadow-md transition-all hover:shadow-xl dark:bg-[#0D6E6E] dark:hover:bg-[#4A9D9C]"
+    >
+      <div class="p-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-[#8F1E00] dark:text-[#AFFFFF]">
+            {t("contact.click")}
+          </h2>
+          <span class="rounded-full bg-white/20 p-2 transition-colors group-hover:bg-[#8F1E00]/20 dark:bg-white/10 dark:group-hover:bg-[#AFFFFF]/20">
+            <Mail class="h-5 w-5 text-[#8F1E00] transition-colors group-hover:text-[#8F1E00] dark:text-[#AFFFFF] dark:group-hover:text-[#AFFFFF]" />
+          </span>
         </div>
-    </div>
+        <div class="mt-4">
+          <p class="text-[#8F1E00]/80 dark:text-[#AFFFFF]/80">Email</p>
+          <p class="mt-1 font-medium text-[#8F1E00] dark:text-[#AFFFFF]">{email}</p>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#8F1E00]/10 to-[#FF7F50]/10 opacity-0 transition-opacity group-hover:opacity-100 dark:from-[#AFFFFF]/10 dark:to-[#0D6E6E]/10" />
+    </a>
+
+    <!-- WhatsApp Card -->
+    <a
+      href={`https://wa.me/${phoneClean}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative overflow-hidden rounded-xl bg-[#FF7F50] hover:bg-[#DD6236] shadow-md transition-all hover:shadow-xl dark:bg-[#0D6E6E] dark:hover:bg-[#4A9D9C]"
+    >
+      <div class="p-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-[#8F1E00] dark:text-[#AFFFFF]">
+            {t("contact.click")}
+          </h2>
+          <span class="rounded-full bg-white/20 p-2 transition-colors group-hover:bg-[#8F1E00]/20 dark:bg-white/10 dark:group-hover:bg-[#AFFFFF]/20">
+            <Phone class="h-5 w-5 text-[#8F1E00] transition-colors group-hover:text-[#8F1E00] dark:text-[#AFFFFF] dark:group-hover:text-[#AFFFFF]" />
+          </span>
+        </div>
+        <div class="mt-4">
+          <p class="text-[#8F1E00]/80 dark:text-[#AFFFFF]/80">WhatsApp</p>
+          <p class="mt-1 font-medium text-[#8F1E00] dark:text-[#AFFFFF]">{phone}</p>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#8F1E00]/10 to-[#FF7F50]/10 opacity-0 transition-opacity group-hover:opacity-100 dark:from-[#AFFFFF]/10 dark:to-[#0D6E6E]/10" />
+    </a>
+  </div>
 </section>

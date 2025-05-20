@@ -1,6 +1,9 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
 import LinkIcon from "./icons/LinkIcon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section
@@ -15,55 +18,35 @@ import LinkIcon from "./icons/LinkIcon.astro";
                 class="rounded-lg shadow-[2px_2px_5px_2px_rgba(0,0,0,0.3)]"
                 width="500"
                 src="/assest/daniel.webp"
-                alt="Daniel Agudelo foto"
+                alt="Daniel's photo"
             />
         </div>
     </div>
 
     <div class="xl:w-1/2 flex-col mt-10 xl:mt-0">
-        <p class="text-xl">Hola, soy</p>
+        <p class="text-xl">{t("about.hi")}</p>
         <h2 class="text-5xl md:text-7xl font-semibold">Daniel Agudelo</h2>
         <div
             class="mt-12 md:mr-20 text-pretty [&>p>strong]:text-[#8B4513] [&>p>strong]:dark:text-[#FFE0C8] [&>p>strong]:font-semibold"
         >
-            <p class="leading-9">
-                Al salir del colegio, mi elección académica fue un camino
-                indeciso. Inicialmente en ingeniería por recomendación, pero la
-                presión social me llevó a reconsiderar. Después de explorar
-                opciones, <strong
-                    >la programación se cruzó de nuevo en mi camino, esta vez
-                    con una determinación inquebrantable.</strong
-                >
-            </p>
+            <p class="leading-9" set:html={t("about.text1")} />
             <br />
-            <p class="leading-9">
-                El Bootcamp Soy Henry marcó un punto de inflexión. Además de las
-                bases técnicas, <strong
-                    >fui reconocido por mi habilidad en el trabajo en equipo,
-                    obteniendo una medalla.</strong
-                >
-            </p>
+            <p class="leading-9" set:html={t("about.text2")} />
+                
+            
             <br />
-            <p class="leading-9">
-                <strong
-                    >Mi interés se inclina hacia el FrontEnd, el diseño web y la
-                    experiencia del usuario</strong
-                >, explorando el fascinante mundo del UI/UX. Creo firmemente que la fusión de funcionalidad técnica y
-                    estética es clave para experiencias únicas.
-            </p>
+            <p class="leading-9" set:html={t("about.text3")} />
             <br />
             <p class="px-4 flex flex-col items-end">
                 <cite
-                    ><q
-                        >El camino hacia la excelencia está siempre en
-                        construcción.</q
+                    ><q>{t("about.quote")}</q
                     ></cite
-                > - Marco Aurelio
+                > - {t("about.quoteAuthor")}
             </p>
         </div>
         <div class="flex justify-center md:justify-start mt-12">
-            <SocialLinks href="/assest/CV_Daniel_Agudelo.pdf">
-                <LinkIcon class="size-7" /> Hoja de vida
+            <SocialLinks href="/assest/English_CV_Daniel_Agudelo.pdf">
+                <LinkIcon class="size-7" /> {t(`home.cv`)}
             </SocialLinks>
         </div>
     </div>
