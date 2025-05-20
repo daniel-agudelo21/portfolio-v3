@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Home from "../../components/Home.astro";
+import AboutMe from "../../components/AboutMe.astro";
+import Education from "../../components/Education.astro";
+import Experience from "../../components/Experience.astro";
+import Projects from "../../components/Projects.astro";
+import Skills from "../../components/Skills.astro";
+import ContactMe from "../../components/ContactMe.astro";
+
+import { useTranslations, getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title="Portfolio de Daniel Agudelo - Desarrollador y Programador Web"
+  description="Desarrollador web full stack enfocado en el frontend con React, Nextjs, Astro, JavaScript, TypeScript, Nodejs, PostgreSQL"
+>
+  <main class="mx-2 md:mx-16 flex flex-col">
+    <Home />
+    <div
+      class="md:h-[770px] lg:h-[607px] md:mt-20 mx-auto md:scroll-mt-24 lg:scroll-mt-44 lg:mb-60 scroll-mt-32"
+      id="education"
+    >
+      <div class="tab_box gap-4 md:gap-10">
+        <button
+          class="tab_btn active text-2xl font-semibold px-2 py-1 rounded-md"
+          >{t(`nav.education`)}</button
+        >
+        <button class="tab_btn text-2xl font-semibold px-2 py-1 rounded-md"
+          >{t(`nav.experience`)}</button
+        >
+      </div>
+      <div class="">
+        <div class="content active">
+          <Education class="" />
+        </div>
+        <div class="content">
+          <Experience class="" />
+        </div>
+      </div>
+    </div>
+
+    <Projects class="lg:mb-60 md:scroll-mt-20 lg:scroll-mt-24 scroll-mt-10" />
+
+    <Skills
+      class="lg:mb-60 md:mb-20 md:scroll-mt-20 lg:scroll-mt-14 scroll-m-14"
+    />
+
+    <AboutMe
+      class="lg:mb-60 md:mb-20 md:scroll-mt-28 lg:scroll-mt-48 scroll-mt-24"
+    />
+
+    <ContactMe class="lg:pt-20 md:scroll-mt-20 lg:mb-60 scroll-m-28" />
+  </main>
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll(".tab_btn");
+  const all_content = document.querySelectorAll(".content");
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+      });
+      tab.classList.add("active");
+
+      all_content.forEach((content) => {
+        content.classList.remove("active");
+      });
+      all_content[index].classList.add("active");
+    });
+  });
+</script>
+
+<style>
+  .cont_global {
+    height: 607px;
+  }
+  .tab_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+  }
+  .tab_box .tab_btn.active {
+    color: #8b4513;
+    background: #ffd299;
+
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+      0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+    @media (prefers-color-scheme: dark) {
+      color: #ff3d3d;
+      background: #ffe0c8;
+    }
+  }
+
+  .content {
+    display: none;
+  }
+  .content.active {
+    display: block;
+  }
+</style>
