@@ -1,0 +1,33 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+const pathname = Astro.url.pathname;
+
+// Función que reemplaza el idioma en la URL, conservando el resto del path
+const getLanguageUrl = (newLang: string) => {
+  const segments = pathname.split("/").filter(Boolean);
+  segments[0] = newLang; // reemplaza el idioma
+  return "/" + segments.join("/") + (pathname.endsWith("/") ? "/" : "");
+};
+---
+
+<ul class="flex gap-2">
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a
+          href={getLanguageUrl(lang)}
+          class={`px-2 py-1 rounded ${
+            lang === currentLang
+              ? "bg-[#0D6E6E] hover:bg-[#4A9D9C] text-[#AFFFFF] px-3 py-1 rounded-md transition-colors"
+              : "bg-gray-200 text-black hover:bg-gray-300 px-3 py-1 rounded-md"
+          }`}
+        >
+          {label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
